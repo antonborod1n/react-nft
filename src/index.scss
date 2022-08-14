@@ -1,0 +1,139 @@
+@import 'reset';
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  background-color: #0F192C;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+header {
+
+  .headerInner {
+    display: flex;
+    justify-content: space-between;
+    padding: 45px 0;
+    border-bottom: 1px solid #EAEAEA;
+  }
+
+  .headerInfo {
+    margin-left: 16px;
+  }
+
+  .headerTitle {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+  }
+
+  .headerSubtitle {
+    font-size: 14px;
+    line-height: 17px;
+    color: #9D9D9D;
+  }
+
+  .headerLeft {
+    display: flex;
+    align-items: center;
+  }
+
+  .headerRightList {
+    display: flex;
+    align-items: center;
+  }
+
+  .headerRightItem+.headerRightItem {
+    margin-left: 30px;
+  }
+
+  .headerRightItemBox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+
+    & span {
+      margin-left: 10px;
+    }
+  }
+}
+
+.product {
+
+  padding: 40px 0;
+
+  .productTitle {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    margin-bottom: 30px;
+  }
+
+  .productInner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 30px;
+  }
+
+  .cards {
+    width: 287px;
+    background-color: #3A3E5C;
+    border-radius: 20px;
+
+    & img {
+      border-radius: 20px 20px 0 0;
+    }
+  }
+
+  .cardsBox {
+    padding: 15px 30px
+  }
+
+  .productDesc {
+    margin-bottom: 15px;
+  }
+
+  .productInfo {
+    display: flex;
+    justify-content: space-between;
+
+    & div p {
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 13px;
+      text-transform: uppercase;
+      color: #BDBDBD;
+    }
+
+    & div span {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+
+  .productBtn {
+    background: #485CDB;
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    line-height: 27px;
+    cursor: pointer;
+  }
+}
