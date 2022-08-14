@@ -1,6 +1,52 @@
 function App() {
   return (
     <div className="wrapper">
+      <div className="overlay">
+        <div className="cart">
+          <h3>Cart</h3>
+
+          <div className="cartContent">
+            <div className="cartItem ">
+              <div className="cartItemImg" style={{
+                backgroundImage: 'url(./img/product/1.jpg)',
+              }}>
+              </div>
+              <div className="cartBox">
+                <p className="carttDesc">NFT n°2595. Collection parody</p>
+                <span>100 $</span>
+              </div>
+              <button className="cartBtn">x</button>
+            </div>
+
+            <div className="cartItem ">
+              <div className="cartItemImg" style={{
+                backgroundImage: 'url(./img/product/2.jpg)',
+              }}>
+              </div>
+              <div className="cartBox">
+                <p className="carttDesc">NFT n°2595. Collection parody</p>
+                <span>100 $</span>
+              </div>
+              <button className="cartBtn">x</button>
+            </div>
+          </div>
+
+          <div className="cartOrder">
+            <ul className="cartOrderList">
+              <li>
+                Итого:
+                <span>21 498 руб. </span>
+              </li>
+              <li>
+                Налог 5%:
+                <span>1074 руб. </span>
+              </li>
+            </ul>
+            <button className="cartOrderBtn">Оформить заказ</button>
+          </div>
+        </div>
+      </div>
+
       <div className="container">
         <header>
           <div className="headerInner">
@@ -38,10 +84,20 @@ function App() {
         </header>
 
         <div className="product">
-          <h1 className="productTitle"> All product</h1>
+          <div className="productTop">
+            <h1 className="productTitle"> All product</h1>
+            <div className="search">
+              <img className="searchIcon" src="./img/search.svg" alt="search" />
+              <input className="searchInput" placeholder="Поиск..."></input>
+            </div>
+          </div>
           <div className="productInner">
+
             <div className="cards">
-              <img width={287} height={287} src="./img/product/1.jpg" alt="product"></img>
+              <div className="cardsImgBox">
+                <img className="cardsHeart" src="./img/heart-unliked.svg" />
+              </div>
+              <img width={287} height={287} src="./img/product/1.jpg" alt="product" />
               <div className="cardsBox">
                 <p className="productDesc">NFT n°2595. Collection parody of moonbirds and their clones</p>
                 <div className="productInfo">
@@ -55,7 +111,7 @@ function App() {
             </div>
 
             <div className="cards">
-              <img width={287} height={287} src="./img/product/2.jpg" alt="product"></img>
+              <img width={287} height={287} src="./img/product/2.jpg" alt="product" />
               <div className="cardsBox">
                 <p className="productDesc">NFT n°2595. Collection parody of moonbirds and their clones</p>
                 <div className="productInfo">
@@ -69,7 +125,7 @@ function App() {
             </div>
 
             <div className="cards">
-              <img width={287} height={287} src="./img/product/3.jpg" alt="product"></img>
+              <img width={287} height={287} src="./img/product/3.jpg" alt="product" />
               <div className="cardsBox">
                 <p className="productDesc">NFT n°2595. Collection parody of moonbirds and their clones</p>
                 <div className="productInfo">
@@ -83,7 +139,7 @@ function App() {
             </div>
 
             <div className="cards">
-              <img width={287} height={287} src="./img/product/4.jpg" alt="product"></img>
+              <img width={287} height={287} src="./img/product/4.jpg" alt="product" />
               <div className="cardsBox">
                 <p className="productDesc">NFT n°2595. Collection parody of moonbirds and their clones</p>
                 <div className="productInfo">
@@ -97,7 +153,7 @@ function App() {
             </div>
 
             <div className="cards">
-              <img width={287} height={287} src="./img/product/5.jpg" alt="product"></img>
+              <img width={287} height={287} src="./img/product/5.jpg" alt="product" />
               <div className="cardsBox">
                 <p className="productDesc">NFT n°2595. Collection parody of moonbirds and their clones</p>
                 <div className="productInfo">
@@ -111,7 +167,7 @@ function App() {
             </div>
 
             <div className="cards">
-              <img width={287} height={287} src="./img/product/6.jpg" alt="product"></img>
+              <img width={287} height={287} src="./img/product/6.jpg" alt="product" />
               <div className="cardsBox">
                 <p className="productDesc">NFT n°2595. Collection parody of moonbirds and their clones</p>
                 <div className="productInfo">
@@ -125,7 +181,7 @@ function App() {
             </div>
 
             <div className="cards">
-              <img width={287} height={287} src="./img/product/7.jpg" alt="product"></img>
+              <img width={287} height={287} src="./img/product/7.jpg" alt="product" />
               <div className="cardsBox">
                 <p className="productDesc">NFT n°2595. Collection parody of moonbirds and their clones</p>
                 <div className="productInfo">
@@ -139,7 +195,7 @@ function App() {
             </div>
 
             <div className="cards">
-              <img width={287} height={287} src="./img/product/8.jpg" alt="product"></img>
+              <img width={287} height={287} src="./img/product/8.jpg" alt="product" />
               <div className="cardsBox">
                 <p className="productDesc">NFT n°2595. Collection parody of moonbirds and their clones</p>
                 <div className="productInfo">
@@ -153,7 +209,7 @@ function App() {
             </div>
 
             <div className="cards">
-              <img width={287} height={287} src="./img/product/9.jpg" alt="product"></img>
+              <img width={287} height={287} src="./img/product/9.jpg" alt="product" />
               <div className="cardsBox">
                 <p className="productDesc">NFT n°2595. Collection parody of moonbirds and their clones</p>
                 <div className="productInfo">
@@ -167,7 +223,7 @@ function App() {
             </div>
 
             <div className="cards">
-              <img width={287} height={287} src="./img/product/10.jpg" alt="product"></img>
+              <img width={287} height={287} src="./img/product/10.jpg" alt="product" />
               <div className="cardsBox">
                 <p className="productDesc">NFT n°2595. Collection parody of moonbirds and their clones</p>
                 <div className="productInfo">
@@ -181,7 +237,7 @@ function App() {
             </div>
 
             <div className="cards">
-              <img width={287} height={287} src="./img/product/11.jpg" alt="product"></img>
+              <img width={287} height={287} src="./img/product/11.jpg" alt="product" />
               <div className="cardsBox">
                 <p className="productDesc">NFT n°2595. Collection parody of moonbirds and their clones</p>
                 <div className="productInfo">
@@ -195,7 +251,7 @@ function App() {
             </div>
 
             <div className="cards">
-              <img width={287} height={287} src="./img/product/12.jpg" alt="product"></img>
+              <img width={287} height={287} src="./img/product/12.jpg" alt="product" />
               <div className="cardsBox">
                 <p className="productDesc">NFT n°2595. Collection parody of moonbirds and their clones</p>
                 <div className="productInfo">
