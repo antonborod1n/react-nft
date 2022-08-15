@@ -1,0 +1,66 @@
+.cards {
+    width: 287px;
+    background-color: #3A3E5C;
+    border-radius: 20px;
+    transition: all .3s;
+    position: relative;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 1px 1px 10px 10px rgba(169, 237, 126, 0.2);
+    }
+
+    & img {
+        border-radius: 20px 20px 0 0;
+    }
+}
+
+.cardsBox {
+    padding: 15px 30px
+}
+
+.cardsImgBox {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+}
+
+
+.productDesc {
+    margin-bottom: 15px;
+}
+
+.productInfo {
+    display: flex;
+    justify-content: space-between;
+
+    & div p {
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 13px;
+        text-transform: uppercase;
+        color: #BDBDBD;
+    }
+
+    & div span {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+.productBtn {
+    background: #485CDB;
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    line-height: 27px;
+    cursor: pointer;
+}
