@@ -1,32 +1,32 @@
+import React, { useEffect } from "react";
 import Header from './components/Header';
 import Cart from './components/Cart';
 import Card from './components/Card';
 
-const arr = [
-  { name: 'NFT n°1591. Collection parody of moonbirds and their clones', price: 10, urlImg: './img/product/16.jpg'},
-  { name: 'NFT n°2692. Collection parody of moonbirds and their clones', price: 90, urlImg: './img/product/2.jpg'},
-  { name: 'NFT n°3693. Collection parody of moonbirds and their clones', price: 80, urlImg: './img/product/3.jpg'},
-  { name: 'NFT n°4694. Collection parody of moonbirds and their clones', price: 70, urlImg: './img/product/4.jpg'},
-  { name: 'NFT n°4694. Collection parody of moonbirds and their clones', price: 70, urlImg: './img/product/15.jpg'},
-  { name: 'NFT n°4694. Collection parody of moonbirds and their clones', price: 70, urlImg: './img/product/6.jpg'},
-  { name: 'NFT n°4694. Collection parody of moonbirds and their clones', price: 70, urlImg: './img/product/7.jpg'},
-  { name: 'NFT n°4694. Collection parody of moonbirds and their clones', price: 70, urlImg: './img/product/8.jpg'},
-  { name: 'NFT n°4694. Collection parody of moonbirds and their clones', price: 70, urlImg: './img/product/9.jpg'},
-  { name: 'NFT n°4694. Collection parody of moonbirds and their clones', price: 70, urlImg: './img/product/10.jpg'},
-  { name: 'NFT n°4694. Collection parody of moonbirds and their clones', price: 70, urlImg: './img/product/11.jpg'},
-  { name: 'NFT n°4694. Collection parody of moonbirds and their clones', price: 70, urlImg: './img/product/13.jpg'},
-  { name: 'NFT n°4694. Collection parody of moonbirds and their clones', price: 70, urlImg: './img/product/12.jpg'},
-  { name: 'NFT n°4694. Collection parody of moonbirds and their clones', price: 70, urlImg: './img/product/14.jpg'},
-  { name: 'NFT n°4694. Collection parody of moonbirds and their clones', price: 70, urlImg: './img/product/5.jpg'},
-  { name: 'NFT n°5695. Collection parody of moonbirds and their clones', price: 60, urlImg: './img/product/1.jpg'}
-]
-
 function App() {
+  const [items, setItems] = React.useState([]);
+  const [cartItems, setCartItems] = React.useState([]);
+  const [cartOpened, setCartOpened] = React.useState(false);
+
+  React.useEffect(() => {
+    fetch('https://62fbb0b1e4bcaf53518b220a.mockapi.io/items')
+      .then((res) => {
+        return res.json();
+      })
+      .then((json) => {
+        setItems(json);
+      });
+  }, []);
+
+  const onAddToCard = (obj) => {
+    setCartItems(prev => [...prev, obj])
+  }
+
   return (
     <div className="wrapper">
-      <Cart />
+      {cartOpened && <Cart items={cartItems} onClose={() => setCartOpened(false)} />}
       <div className="container">
-        <Header />
+        <Header onClickCart={() => setCartOpened(true)} />
         <div className="product">
           <div className="productTop">
             <h1 className="productTitle"> All product</h1>
@@ -36,13 +36,14 @@ function App() {
             </div>
           </div>
           <div className="productInner">
-
             {
-              arr.map((obj) => (
+              items.map((item) => (
                 <Card
-                  title={obj.name}
-                  urlImg={obj.urlImg}
-                  price={obj.price + ' $'}
+                  title={item.name}
+                  urlImg={item.urlImg}
+                  price={item.price + ' $'}
+                  onPlus={(obj) => onAddToCard(obj)}
+                  onLiked={(obj) => onAddToCard(obj)}
                 />
               ))
             }

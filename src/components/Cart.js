@@ -1,36 +1,28 @@
 
-function Cart() {
+function Cart({onClose, items = []}) {
     return (
-        <div className="overlay" style={{ display: 'none' }}>
+        <div className="overlay">
             <div className="cart">
                 <div className="cartTop">
                     <h3>Cart</h3>
-                    <button className="cartClose">x</button>
+                    <button className="cartClose" onClick={onClose}>x</button>
                 </div>
                 <div className="cartContent">
-                    <div className="cartItem ">
-                        <div className="cartItemImg" style={{
-                            backgroundImage: 'url(./img/product/1.jpg)',
-                        }}>
-                        </div>
-                        <div className="cartBox">
-                            <p className="carttDesc">NFT n°2595. Collection parody</p>
-                            <span>100 $</span>
-                        </div>
-                        <button className="cartBtn">x</button>
-                    </div>
-
-                    <div className="cartItem ">
-                        <div className="cartItemImg" style={{
-                            backgroundImage: 'url(./img/product/2.jpg)',
-                        }}>
-                        </div>
-                        <div className="cartBox">
-                            <p className="carttDesc">NFT n°2595. Collection parody</p>
-                            <span>100 $</span>
-                        </div>
-                        <button className="cartBtn">x</button>
-                    </div>
+                    {
+                        items.map((obj) => (
+                            <div className="cartItem ">
+                                <div className="cartItemImg" style={{
+                                    backgroundImage: `url(${obj.urlImg})`,
+                                }}>
+                                </div>
+                                <div className="cartBox">
+                                    <p className="carttDesc">${obj.title}</p>
+                                    <span>${obj.price}</span>
+                                </div>
+                                <button className="cartBtn">x</button>
+                            </div>
+                        ))
+                    }
                 </div>
 
                 <div className="cartOrder">
