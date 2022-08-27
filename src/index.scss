@@ -197,7 +197,7 @@ header {
     align-items: center;
     margin-bottom: 20px;
     font-size: 16px;
-    line-height: 19px;
+    line-height: 18px;
 
     span {
       font-weight: 600;
@@ -210,7 +210,7 @@ header {
 .cartOrderBtn {
   width: 100%;
   background: #9DD558;
-  border-radius: 18px;
+  border-radius: 19px;
   color: #FFFFFF;
   height: 55px;
   border: none;
@@ -272,11 +272,13 @@ header {
 
   .search {
     position: relative;
+
   }
 
   .searchIcon {
     position: absolute;
     top: 14px;
     left: 15px;
+
   }
 }
